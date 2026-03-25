@@ -789,6 +789,47 @@
     .footer-links a:hover { color: var(--gold); }
     .footer-copy { font-size: 11px; font-weight: 300; color: rgba(253,250,246,.25); }
 
+    /* ─── Photo Placeholder ──────────────────────────────── */
+    .photo-placeholder {
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, #e8e4dc 0%, #f0ece4 100%);
+      border: 1px dashed rgba(201,168,76,.45);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 12px; position: relative; overflow: hidden;
+      min-height: 200px;
+    }
+    .photo-placeholder::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(rgba(201,168,76,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,.06) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    .photo-placeholder-icon {
+      width: 40px; height: 40px;
+      border: 1px solid rgba(201,168,76,.5);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; z-index: 1;
+    }
+    .photo-placeholder-icon::after {
+      content: '';
+      width: 16px; height: 13px;
+      border: 1.5px solid var(--gold);
+      border-radius: 2px;
+      position: relative;
+      box-shadow: 0 -4px 0 0 var(--gold);
+    }
+    .photo-placeholder-label {
+      font-size: 9px; font-weight: 500;
+      letter-spacing: .28em; text-transform: uppercase;
+      color: rgba(201,168,76,.7);
+      position: relative; z-index: 1;
+      text-align: center; padding: 0 12px;
+    }
+
     /* ─── Responsive ──────────────────────────────────────── */
     @media (max-width: 1024px) {
       .intro-inner, .about-inner { gap: 56px; }
@@ -891,10 +932,16 @@
         <!-- Images: main wipes up, accent slides from right -->
         <div class="intro-images">
           <div class="img-reveal fade-left">
-            <img class="intro-img-main" src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&q=80" alt="Interior Design Studio">
+            <div class="intro-img-main photo-placeholder">
+              <div class="photo-placeholder-icon"></div>
+              <span class="photo-placeholder-label">Your Photo Here</span>
+            </div>
           </div>
           <div class="img-reveal d3" style="position:absolute;bottom:0;right:-40px;width:52%;z-index:2;">
-            <img class="intro-img-accent" style="position:static;border:none;box-shadow:none;aspect-ratio:4/3;width:100%;object-fit:cover;" src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=600&q=80" alt="Design Detail">
+            <div class="photo-placeholder" style="aspect-ratio:4/3;border:8px solid var(--ivory);">
+              <div class="photo-placeholder-icon"></div>
+              <span class="photo-placeholder-label">Your Photo Here</span>
+            </div>
           </div>
         </div>
 
@@ -969,17 +1016,17 @@
       </div>
       <div class="portfolio-projects">
 
-        <!-- Project 1: main wipes UP, top-right slides DOWN, bottom-right slides from RIGHT -->
+        <!-- Project 1 -->
         <div class="project-row" id="proj1">
           <div class="project-images tilt-group">
             <div class="pimg pimg-main pimg-up d1">
-              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Holcombe Condo">
+              <div class="photo-placeholder"><div class="photo-placeholder-icon"></div><span class="photo-placeholder-label">Project Photo</span></div>
             </div>
             <div class="pimg pimg-sm pimg-down d2">
-              <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80" alt="Holcombe Condo Detail">
+              <div class="photo-placeholder"><div class="photo-placeholder-icon"></div><span class="photo-placeholder-label">Project Photo</span></div>
             </div>
             <div class="pimg pimg-sm pimg-right d3">
-              <img src="https://images.unsplash.com/photo-1599427303058-f04cbcf4756f?w=800&q=80" alt="Holcombe Condo Bath">
+              <div class="photo-placeholder"><div class="photo-placeholder-icon"></div><span class="photo-placeholder-label">Project Photo</span></div>
             </div>
           </div>
           <div class="project-info fade-right d2">
@@ -990,17 +1037,17 @@
           </div>
         </div>
 
-        <!-- Project 2: main wipes UP, top-left from DOWN, bottom-left from LEFT -->
+        <!-- Project 2 -->
         <div class="project-row reverse" id="proj2">
           <div class="project-images tilt-group">
             <div class="pimg pimg-main pimg-up d1">
-              <img src="https://images.unsplash.com/photo-1616137466211-f939a420be84?w=800&q=80" alt="Gateway Condo">
+              <div class="photo-placeholder"><div class="photo-placeholder-icon"></div><span class="photo-placeholder-label">Project Photo</span></div>
             </div>
             <div class="pimg pimg-sm pimg-down d2">
-              <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?w=800&q=80" alt="Gateway Condo Detail">
+              <div class="photo-placeholder"><div class="photo-placeholder-icon"></div><span class="photo-placeholder-label">Project Photo</span></div>
             </div>
             <div class="pimg pimg-sm pimg-left d3">
-              <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800&q=80" alt="Gateway Condo Kitchen">
+              <div class="photo-placeholder"><div class="photo-placeholder-icon"></div><span class="photo-placeholder-label">Project Photo</span></div>
             </div>
           </div>
           <div class="project-info fade-left d2">
@@ -1011,17 +1058,17 @@
           </div>
         </div>
 
-        <!-- Project 3: main from LEFT, top-right from DOWN, bottom-right from RIGHT -->
+        <!-- Project 3 -->
         <div class="project-row" id="proj3">
           <div class="project-images tilt-group">
             <div class="pimg pimg-main pimg-up d1">
-              <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80" alt="Collective Washroom">
+              <div class="photo-placeholder"><div class="photo-placeholder-icon"></div><span class="photo-placeholder-label">Project Photo</span></div>
             </div>
             <div class="pimg pimg-sm pimg-down d2">
-              <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80" alt="Collective Detail">
+              <div class="photo-placeholder"><div class="photo-placeholder-icon"></div><span class="photo-placeholder-label">Project Photo</span></div>
             </div>
             <div class="pimg pimg-sm pimg-right d3">
-              <img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=800&q=80" alt="Collective Living">
+              <div class="photo-placeholder"><div class="photo-placeholder-icon"></div><span class="photo-placeholder-label">Project Photo</span></div>
             </div>
           </div>
           <div class="project-info fade-right d2">
@@ -1095,7 +1142,10 @@
         <!-- About image: clip wipe from bottom + frame shift -->
         <div class="about-image-wrap fade-right">
           <div class="about-img-inner img-reveal">
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80" alt="Bella V - Interior Designer">
+            <div class="photo-placeholder" style="aspect-ratio:3/4;">
+              <div class="photo-placeholder-icon"></div>
+              <span class="photo-placeholder-label">Designer Photo</span>
+            </div>
           </div>
         </div>
       </div>
