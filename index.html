@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bella V Interior Design | Houston, Texas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Raleway:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+
+    /* ─── Reset & Base ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ivory:      #f9f6f1;
+      --warm-white: #fdfaf6;
+      --sand:       #ede5d8;
+      --tan:        #c9b89e;
+      --taupe:      #a0896e;
+      --brown:      #6b5240;
+      --dark:       #2c2118;
+      --gold:       #b8965a;
+      --gold-light: #d4b07a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      background: var(--warm-white);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; }
+    a   { color: inherit; text-decoration: none; }
+
+    .container {
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* ─── Utility ──────────────────────────────────────────── */
+    .kicker {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--dark);
+    }
+
+    .section-title em { font-style: italic; }
+
+    .btn {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      padding: 16px 36px;
+      border: 1px solid var(--dark);
+      color: var(--dark);
+      transition: background 0.3s, color 0.3s;
+      cursor: pointer;
+    }
+
+    .btn:hover { background: var(--dark); color: var(--warm-white); }
+
+    .btn-gold {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--warm-white);
+    }
+
+    .btn-gold:hover { background: var(--brown); border-color: var(--brown); }
+
+    /* ─── Navigation ───────────────────────────────────────── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 24px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(253, 250, 246, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(201, 184, 158, 0.25);
+      transition: padding 0.3s;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      color: var(--dark);
+    }
+
+    .nav-logo span { font-style: italic; color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--taupe);
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--dark); }
+
+    .nav-cta {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--dark);
+      border-bottom: 1px solid var(--tan);
+      padding-bottom: 2px;
+      transition: color 0.3s, border-color 0.3s;
+    }
+
+    .nav-cta:hover { color: var(--gold); border-color: var(--gold); }
+
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .nav-hamburger span { display: block; width: 24px; height: 1px; background: var(--dark); transition: all 0.3s; }
+
+    /* ─── Hero ─────────────────────────────────────────────── */
+    .hero {
+      height: 100vh;
+      min-height: 700px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 80px;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1600&q=85');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(44,33,24,0.65) 0%, rgba(44,33,24,0.1) 60%, transparent 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      padding: 0 40px;
+    }
+
+    .hero-kicker {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(42px, 6vw, 80px);
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--warm-white);
+      margin-bottom: 28px;
+    }
+
+    .hero-title em { font-style: italic; }
+
+    .hero-sub {
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: rgba(253,250,246,0.8);
+      max-width: 440px;
+      margin-bottom: 40px;
+    }
+
+    .hero-actions { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+
+    .btn-light {
+      background: transparent;
+      border-color: rgba(253,250,246,0.6);
+      color: var(--warm-white);
+    }
+
+    .btn-light:hover { background: var(--warm-white); color: var(--dark); }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 32px;
+      right: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      z-index: 1;
+    }
+
+    .hero-scroll span {
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(253,250,246,0.5);
+      writing-mode: vertical-rl;
+    }
+
+    .hero-scroll-line {
+      width: 1px;
+      height: 48px;
+      background: rgba(253,250,246,0.3);
+    }
+
+    /* ─── Intro ────────────────────────────────────────────── */
+    .intro {
+      padding: 120px 0;
+      background: var(--warm-white);
+    }
+
+    .intro-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .intro-image-wrap {
+      position: relative;
+    }
+
+    .intro-image-wrap img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+    }
+
+    .intro-image-accent {
+      position: absolute;
+      bottom: -32px;
+      right: -32px;
+      width: 55%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border: 6px solid var(--warm-white);
+    }
+
+    .intro-text { padding-left: 20px; }
+
+    .intro-text p {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--taupe);
+      margin-bottom: 20px;
+    }
+
+    .intro-text p strong {
+      font-weight: 500;
+      color: var(--dark);
+    }
+
+    .intro-stats {
+      display: flex;
+      gap: 40px;
+      margin: 40px 0;
+      padding: 32px 0;
+      border-top: 1px solid var(--sand);
+      border-bottom: 1px solid var(--sand);
+    }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 400;
+      color: var(--dark);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--taupe);
+      margin-top: 4px;
+      display: block;
+    }
+
+    /* ─── Services ─────────────────────────────────────────── */
+    .services {
+      padding: 120px 0;
+      background: var(--ivory);
+    }
+
+    .services-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 64px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .service-card {
+      background: var(--warm-white);
+      padding: 48px 40px;
+      transition: background 0.3s;
+    }
+
+    .service-card:hover { background: var(--dark); }
+    .service-card:hover .service-num,
+    .service-card:hover .service-name,
+    .service-card:hover .service-desc { color: var(--warm-white); }
+    .service-card:hover .service-line { background: var(--gold); }
+
+    .service-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 13px;
+      font-style: italic;
+      color: var(--gold);
+      margin-bottom: 24px;
+      display: block;
+      transition: color 0.3s;
+    }
+
+    .service-line {
+      width: 32px;
+      height: 1px;
+      background: var(--tan);
+      margin-bottom: 24px;
+      transition: background 0.3s;
+    }
+
+    .service-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1.3;
+      margin-bottom: 16px;
+      transition: color 0.3s;
+    }
+
+    .service-desc {
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--taupe);
+      transition: color 0.3s;
+    }
+
+    /* ─── Portfolio ────────────────────────────────────────── */
+    .portfolio {
+      padding: 120px 0;
+      background: var(--warm-white);
+    }
+
+    .portfolio-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 64px;
+    }
+
+    .view-all {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--taupe);
+      border-bottom: 1px solid var(--tan);
+      padding-bottom: 3px;
+      transition: color 0.3s, border-color 0.3s;
+    }
+
+    .view-all:hover { color: var(--dark); border-color: var(--dark); }
+
+    .portfolio-projects { display: grid; gap: 56px; }
+
+    .project-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .project-row.reverse .project-images { order: 2; }
+    .project-row.reverse .project-info  { order: 1; }
+
+    .project-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .project-img-wrap {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .project-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+
+    .project-img-wrap:hover img { transform: scale(1.06); }
+
+    .img-main {
+      grid-row: span 2;
+      aspect-ratio: 2/3;
+    }
+
+    .img-sm { aspect-ratio: 4/3; }
+
+    .project-info { padding: 24px 16px; }
+
+    .project-kicker {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .project-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 3vw, 38px);
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--dark);
+      margin-bottom: 16px;
+    }
+
+    .project-name em { font-style: italic; }
+
+    .project-desc {
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--taupe);
+      max-width: 360px;
+      margin-bottom: 28px;
+    }
+
+    .project-link {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--dark);
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      transition: gap 0.3s;
+    }
+
+    .project-link:hover { gap: 20px; }
+
+    .project-link-line {
+      display: block;
+      width: 36px;
+      height: 1px;
+      background: var(--dark);
+      position: relative;
+    }
+
+    .project-link-line::after {
+      content: '';
+      position: absolute;
+      right: 0; top: -3px;
+      width: 6px; height: 6px;
+      border-top: 1px solid var(--dark);
+      border-right: 1px solid var(--dark);
+      transform: rotate(45deg);
+    }
+
+    /* ─── Testimonials ─────────────────────────────────────── */
+    .testimonials {
+      padding: 120px 0;
+      background: var(--dark);
+    }
+
+    .testimonials .kicker { color: var(--gold); }
+
+    .testimonials .section-title { color: var(--warm-white); }
+
+    .testimonials-head { margin-bottom: 64px; }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .testimonial-card {
+      background: rgba(255,255,255,0.04);
+      padding: 48px 40px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .testimonial-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 24px;
+    }
+
+    .testimonial-text {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.9;
+      color: rgba(253,250,246,0.7);
+      margin-bottom: 32px;
+    }
+
+    .testimonial-author {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--warm-white);
+      display: block;
+    }
+
+    .testimonial-role {
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--taupe);
+      margin-top: 4px;
+      display: block;
+    }
+
+    /* ─── About ────────────────────────────────────────────── */
+    .about {
+      padding: 120px 0;
+      background: var(--ivory);
+    }
+
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-text { padding-right: 20px; }
+
+    .about-text p {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--taupe);
+      margin-bottom: 20px;
+    }
+
+    .about-text p strong {
+      font-weight: 500;
+      color: var(--dark);
+    }
+
+    .about-signature {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-style: italic;
+      color: var(--dark);
+      margin-top: 40px;
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .about-sig-title {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--taupe);
+      display: block;
+    }
+
+    .about-image-wrap img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+    }
+
+    /* ─── Contact ──────────────────────────────────────────── */
+    .contact {
+      padding: 120px 0;
+      background: var(--warm-white);
+    }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+    }
+
+    .contact-text p {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--taupe);
+      margin-bottom: 40px;
+    }
+
+    .contact-details { display: flex; flex-direction: column; gap: 20px; }
+
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .contact-label {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .contact-value {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--dark);
+    }
+
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .form-group { display: flex; flex-direction: column; gap: 8px; }
+
+    .form-label {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--taupe);
+    }
+
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      padding: 14px 16px;
+      background: var(--ivory);
+      border: 1px solid var(--sand);
+      font-family: 'Raleway', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--dark);
+      outline: none;
+      transition: border-color 0.3s;
+      resize: none;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus { border-color: var(--gold); }
+
+    .form-textarea { height: 120px; }
+
+    /* ─── Footer ───────────────────────────────────────────── */
+    .footer {
+      padding: 56px 0;
+      background: var(--dark);
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--warm-white);
+    }
+
+    .footer-logo span { font-style: italic; color: var(--gold); }
+
+    .footer-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(253,250,246,0.4);
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover { color: var(--warm-white); }
+
+    .footer-copy {
+      font-size: 11px;
+      font-weight: 300;
+      color: rgba(253,250,246,0.3);
+    }
+
+    /* ─── Responsive ───────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .intro-inner,
+      .about-inner { gap: 48px; }
+      .services-grid,
+      .testimonials-grid { grid-template-columns: 1fr; gap: 2px; }
+    }
+
+    @media (max-width: 768px) {
+      .container { padding: 0 24px; }
+      .nav { padding: 20px 24px; }
+      .nav-links, .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+
+      .hero-content { padding: 0 24px; }
+      .hero-scroll { display: none; }
+
+      .intro-inner,
+      .about-inner,
+      .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+
+      .intro-image-accent { display: none; }
+      .intro-text { padding-left: 0; }
+      .about-text  { padding-right: 0; }
+
+      .services-head { flex-direction: column; align-items: flex-start; gap: 24px; }
+
+      .project-row,
+      .project-row.reverse .project-images,
+      .project-row.reverse .project-info { grid-template-columns: 1fr; order: unset; }
+
+      .project-row { grid-template-columns: 1fr; }
+
+      .testimonials-grid { grid-template-columns: 1fr; }
+
+      .form-row { grid-template-columns: 1fr; }
+
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+
+      .portfolio-head { flex-direction: column; align-items: flex-start; gap: 16px; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ─── Navigation ──────────────────────────────────────── -->
+  <nav class="nav">
+    <a href="#" class="nav-logo">Bella <span>V</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Start a Project</a>
+    <div class="nav-hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ─── Hero ────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <span class="hero-kicker">Interior Design · Houston, Texas</span>
+      <h1 class="hero-title">Spaces That<br><em>Tell Your Story</em></h1>
+      <p class="hero-sub">Bella V Interior Design creates refined, livable spaces rooted in warmth, intention, and timeless beauty.</p>
+      <div class="hero-actions">
+        <a href="#portfolio" class="btn btn-gold">View Our Work</a>
+        <a href="#contact"   class="btn btn-light">Start a Project</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ─── Intro ────────────────────────────────────────────── -->
+  <section class="intro" id="intro">
+    <div class="container">
+      <div class="intro-inner">
+        <div class="intro-image-wrap">
+          <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&q=80" alt="Interior Design Studio">
+          <img class="intro-image-accent" src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=600&q=80" alt="Design Detail">
+        </div>
+        <div class="intro-text">
+          <span class="kicker">Our Philosophy</span>
+          <h2 class="section-title" style="margin-bottom:28px;">Design With<br><em>Purpose & Soul</em></h2>
+          <p>At Bella V, we believe a well-designed space does more than look beautiful — it <strong>feels like home</strong>. Every project begins with listening: understanding how you live, what you love, and what you need from your space.</p>
+          <p>From full-home renovations to single-room transformations, we bring the same care and intentionality to every project — no matter the scale.</p>
+          <div class="intro-stats">
+            <div>
+              <span class="stat-num">12+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div>
+              <span class="stat-num">200+</span>
+              <span class="stat-label">Projects Completed</span>
+            </div>
+            <div>
+              <span class="stat-num">100%</span>
+              <span class="stat-label">Client Satisfaction</span>
+            </div>
+          </div>
+          <a href="#portfolio" class="btn">See Our Portfolio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Services ────────────────────────────────────────── -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="services-head">
+        <div>
+          <span class="kicker">What We Offer</span>
+          <h2 class="section-title">Our <em>Services</em></h2>
+        </div>
+        <a href="#contact" class="btn">Get a Consultation</a>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <span class="service-num">01</span>
+          <div class="service-line"></div>
+          <h3 class="service-name">Full Interior<br>Design</h3>
+          <p class="service-desc">End-to-end design for new builds and full-home renovations. We handle everything from concept to final install — furniture, finishes, lighting, and art curation.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-num">02</span>
+          <div class="service-line"></div>
+          <h3 class="service-name">Room<br>Makeovers</h3>
+          <p class="service-desc">Targeted transformations for single rooms or living areas. Ideal for clients who want a dramatic change without a full renovation commitment.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-num">03</span>
+          <div class="service-line"></div>
+          <h3 class="service-name">Virtual Design<br>Consultation</h3>
+          <p class="service-desc">Professional design guidance delivered remotely. Receive a full design package — moodboards, sourcing lists, and layout plans — wherever you are.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Portfolio ────────────────────────────────────────── -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="portfolio-head">
+        <div>
+          <span class="kicker">Recent Projects</span>
+          <h2 class="section-title">Our <em>Portfolio</em></h2>
+        </div>
+        <a href="#contact" class="view-all">View Full Portfolio</a>
+      </div>
+      <div class="portfolio-projects">
+
+        <div class="project-row">
+          <div class="project-images">
+            <div class="project-img-wrap img-main">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Holcombe Condo">
+            </div>
+            <div class="project-img-wrap img-sm">
+              <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80" alt="Holcombe Condo Detail">
+            </div>
+            <div class="project-img-wrap img-sm">
+              <img src="https://images.unsplash.com/photo-1599427303058-f04cbcf4756f?w=800&q=80" alt="Holcombe Condo Bath">
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-kicker">Houston, Texas</span>
+            <h3 class="project-name">Holcombe<br><em>Condo</em></h3>
+            <p class="project-desc">A sophisticated urban retreat blending warm neutrals with bold architectural moments. Every surface was considered — from the custom millwork to the hand-selected stone.</p>
+            <a href="#" class="project-link">View Project <span class="project-link-line"></span></a>
+          </div>
+        </div>
+
+        <div class="project-row reverse">
+          <div class="project-images">
+            <div class="project-img-wrap img-main">
+              <img src="https://images.unsplash.com/photo-1616137466211-f939a420be84?w=800&q=80" alt="Gateway Condo">
+            </div>
+            <div class="project-img-wrap img-sm">
+              <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?w=800&q=80" alt="Gateway Condo Detail">
+            </div>
+            <div class="project-img-wrap img-sm">
+              <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800&q=80" alt="Gateway Condo Kitchen">
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-kicker">Houston, Texas</span>
+            <h3 class="project-name">Gateway<br><em>Condo</em></h3>
+            <p class="project-desc">A light-filled modern renovation that maximizes natural light and open flow. Layered textures and curated artwork make every room feel collected and intentional.</p>
+            <a href="#" class="project-link">View Project <span class="project-link-line"></span></a>
+          </div>
+        </div>
+
+        <div class="project-row">
+          <div class="project-images">
+            <div class="project-img-wrap img-main">
+              <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80" alt="Collective Washroom">
+            </div>
+            <div class="project-img-wrap img-sm">
+              <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80" alt="Collective Detail">
+            </div>
+            <div class="project-img-wrap img-sm">
+              <img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=800&q=80" alt="Collective Living">
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-kicker">Houston, Texas</span>
+            <h3 class="project-name">Collective<br><em>Washroom</em></h3>
+            <p class="project-desc">A dramatic bathroom renovation that transforms a utilitarian space into a spa-like sanctuary. Marble, brushed brass, and bespoke tile work elevate the everyday ritual.</p>
+            <a href="#" class="project-link">View Project <span class="project-link-line"></span></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Testimonials ─────────────────────────────────────── -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="testimonials-head">
+        <span class="kicker">Client Love</span>
+        <h2 class="section-title" style="color:var(--warm-white);">What Our<br><em>Clients Say</em></h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">Working with Bella V was an absolute dream. She completely transformed our living room into a space we never want to leave. The attention to detail was unmatched.</p>
+          <span class="testimonial-author">Sarah & Marcus T.</span>
+          <span class="testimonial-role">River Oaks Residence</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">From our very first consultation, we knew we were in good hands. Bella listened to everything we wanted and delivered something even better than we imagined.</p>
+          <span class="testimonial-author">Jennifer L.</span>
+          <span class="testimonial-role">Midtown Condo Renovation</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">Our home finally feels like us. Bella has a rare ability to translate personality into a physical space — every room tells our story in the most beautiful way.</p>
+          <span class="testimonial-author">The Rodriguez Family</span>
+          <span class="testimonial-role">Memorial Full Home Design</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── About ────────────────────────────────────────────── -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-text">
+          <span class="kicker">Meet the Designer</span>
+          <h2 class="section-title" style="margin-bottom:28px;">The Person<br><em>Behind the Vision</em></h2>
+          <p>Hello — I'm Bella. I've spent over a decade helping Houston families and professionals create homes that are as functional as they are beautiful. My approach is rooted in the belief that <strong>great design starts with great listening.</strong></p>
+          <p>I hold a degree in Interior Architecture and have worked on projects ranging from cozy bungalow refreshes to complete luxury penthouse builds. Every client, every project, receives my full and personal attention.</p>
+          <p>When I'm not sourcing the perfect vintage piece or obsessing over tile grout colors, you'll find me at the Houston Farmers Market or exploring the city's ever-growing art scene.</p>
+          <span class="about-signature">Bella V.</span>
+          <span class="about-sig-title">Principal Designer, Bella V Interior Design</span>
+        </div>
+        <div class="about-image-wrap">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80" alt="Bella V - Interior Designer">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Contact ──────────────────────────────────────────── -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <div>
+          <span class="kicker">Get In Touch</span>
+          <h2 class="section-title" style="margin-bottom:28px;">Let's Create<br><em>Something Beautiful</em></h2>
+          <p class="contact-text" style="font-size:14px;font-weight:300;line-height:1.9;color:var(--taupe);margin-bottom:40px;">
+            Ready to transform your space? We'd love to hear about your project. Reach out and we'll schedule a complimentary 30-minute discovery call.
+          </p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <span class="contact-label">Email</span>
+              <span class="contact-value">hello@bellavinteriors.com</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Phone</span>
+              <span class="contact-value">(713) 555-0142</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Studio</span>
+              <span class="contact-value">Houston, Texas</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Hours</span>
+              <span class="contact-value">Mon – Fri, 9am – 5pm CST</span>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="first">First Name</label>
+              <input class="form-input" type="text" id="first" name="first" placeholder="Jane" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="last">Last Name</label>
+              <input class="form-input" type="text" id="last" name="last" placeholder="Smith" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email Address</label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="jane@example.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="project">Project Type</label>
+            <input class="form-input" type="text" id="project" name="project" placeholder="Full Home, Single Room, Virtual…">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">Tell Us About Your Project</label>
+            <textarea class="form-textarea" id="message" name="message" placeholder="Share a little about your space, your style, and what you're hoping to achieve…" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold" style="border:none;cursor:pointer;">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ───────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="#" class="footer-logo">Bella <span>V</span></a>
+        <ul class="footer-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <span class="footer-copy">&copy; 2025 Bella V Interior Design. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const links = document.querySelector('.nav-links');
+      const cta   = document.querySelector('.nav-cta');
+      if (links.style.display === 'flex') {
+        links.style.display = 'none';
+        cta.style.display   = 'none';
+      } else {
+        links.style.display = 'flex';
+        links.style.flexDirection = 'column';
+        links.style.position = 'absolute';
+        links.style.top = '72px';
+        links.style.left = '0'; links.style.right = '0';
+        links.style.background = 'var(--warm-white)';
+        links.style.padding = '24px 24px';
+        links.style.gap = '20px';
+        links.style.borderBottom = '1px solid var(--sand)';
+        cta.style.display = 'none';
+      }
+    }
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      btn.textContent = 'Message Sent!';
+      btn.style.background = 'var(--brown)';
+      setTimeout(() => {
+        btn.textContent = 'Send Message';
+        btn.style.background = 'var(--gold)';
+        e.target.reset();
+      }, 3000);
+    }
+  </script>
+
+</body>
+</html>
