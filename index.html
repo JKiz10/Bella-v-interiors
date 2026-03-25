@@ -267,20 +267,19 @@
       overflow: hidden;
     }
     .hero-bg {
-      position: absolute; inset: -12%;
-      background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1800&q=85');
-      background-size: cover; background-position: center;
-      will-change: transform;
-      animation: heroZoom 20s ease-in-out infinite alternate;
-    }
-    @keyframes heroZoom {
-      from { transform: scale(1); }
-      to   { transform: scale(1.08); }
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 50%, rgba(201,168,76,.13) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 80% at 80% 20%, rgba(30,45,74,.9) 0%, transparent 60%),
+        linear-gradient(135deg, #0a1628 0%, #162040 50%, #0d1e3a 100%);
     }
     .hero-bg::after {
       content: '';
       position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(10,22,40,.92) 0%, rgba(10,22,40,.3) 55%, rgba(10,22,40,.08) 100%);
+      background-image:
+        linear-gradient(rgba(201,168,76,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,.04) 1px, transparent 1px);
+      background-size: 72px 72px;
     }
     /* Gold bloom */
     .hero::before {
